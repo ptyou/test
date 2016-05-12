@@ -1,3 +1,8 @@
+/*
+单链表（带头节点）：
+    初始化，链表的长度，插入数据，删除数据，销毁链表
+*/
+
 #include<stdio.h>
 #include<malloc.h>
 #include<stdlib.h>
