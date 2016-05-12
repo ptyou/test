@@ -43,4 +43,29 @@ Status insertList(ListNodeh L,int i,int data){//插入函数
     p->next = s;
     return 1;
 }
+Status listDel(ListNodeh L,int i,Datatype *data){
+    //删除第i个元素，并有data返回其值
+    int j = 0;
+    ListNodeh p,q;
+    p = L->next;
+    while(p&&j<i-1){    //将指针移动到i-1处
+        p = p->next;
+        j++;
+    }
+    if(!p && j>i-1)    //移除位置出错
+        return 0;
+    q = p->next;
+    p->next = q->next;
+    *data = q->data;
+    free(q);
+    return 1;
+}
 
+void DestroyList(ListNodeh *L){
+    ListNodeh q;
+    while(*L){
+        q = (*L)->next;
+        free(*L);
+        (*L) = q;
+    }
+}
