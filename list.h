@@ -81,7 +81,7 @@ void GetNode(ListNodeh L,int i, Datatype *x){
     //将指针移动到i-1与i处
     ListNodeh p;
     p = L->next;
-    int j=0;
+    int j=-1;   //与插入操作保持一致
     while(p && j<i-1)
     {
         p = p->next;
@@ -97,7 +97,7 @@ void GetNode(ListNodeh L,int i, Datatype *x){
 //     int m,i,n,x ;
 //     i =initList(&L);
 //     printf("初始化%d\n", i);
-//     for (i=0;i<10;i++){
+//     for (i=0;i<10;i++){     //i从0开始需要注意到链表的操作
 //         n=insertList(L,i,i+1); //注意i的值变化
 //         printf("插入%d\n",n );
 //     }
