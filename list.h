@@ -20,6 +20,8 @@ typedef struct LNode{
 
 Status initList(ListNodeh *L){
     *L = (ListNodeh)malloc(sizeof(ListNode));
+    if (!*L)
+        return 0;
     (*L)->next = NULL;
     return 1;
 }
