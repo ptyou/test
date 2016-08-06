@@ -46,7 +46,7 @@ Status insertList(ListNodeh L,int i,int data){//插入函数
         return 0; //插入出错
     }
     //生成一个新的节点用于保存
-    ListNodeh s = (ListNodeh)malloc(sizeof(ListNode));
+    ListNode *s = (ListNodeh)malloc(sizeof(ListNode));
     s->data = data;
     s->next = p->next;
     p->next = s;
@@ -55,7 +55,7 @@ Status insertList(ListNodeh L,int i,int data){//插入函数
 Status listDel(ListNodeh L,int i,Datatype *data){
     //删除第i个元素，并有data返回其值
     int j = 0;
-    ListNodeh p,q;
+    ListNode *p,*q;
     p = L->next;
     while(p&&j<i-1){    //将指针移动到i-1处
         p = p->next;
@@ -71,7 +71,7 @@ Status listDel(ListNodeh L,int i,Datatype *data){
 }
 
 void DestroyList(ListNodeh *L){
-    ListNodeh q;
+    ListNode *q;
     while(*L){
         q = (*L)->next;
         free(*L);
@@ -80,7 +80,7 @@ void DestroyList(ListNodeh *L){
 }
 void GetNode(ListNodeh L,int i, Datatype *x){
     //将指针移动到i-1与i处
-    ListNodeh p;
+    ListNode *p;
     p = L->next;
     int j=-1;   //与插入操作保持一致
     while(p && j<i-1)
